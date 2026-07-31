@@ -1,5 +1,6 @@
-# Example Scripts
-These were generatedscripts and not tested. But you shoudbe abel to modify for your own use. 
+# Example Python Scripts
+
+These were generated scripts that I used while developing the hardware and not fully tested. But you should be able to modify for your own use. 
 --
 
 ## The Failsafe Monitoring Python Script
@@ -9,4 +10,4 @@ This Python script uses the gpiozero library to watch for pulses on the FG pin. 
 --
 ## The Complete Automated Python Script
 
-This script uses the gpiozero library to handle both pins. It samples the Raspberry Pi's internal CPU temperature every few seconds. If the Pi gets warm, it turns on the transistor and scales the fan speed using PWM. If the Pi cools down, it shuts off the transistor completely to save power.
+This script uses the **gpiozero** library to handle both pins. It samples the Raspberry Pi's internal CPU temperature every few seconds. If the Pi gets warm, it turns on the fan and scales the fan speed using PWM. If the Pi cools down, it shuts off the transistor completely to save power.
