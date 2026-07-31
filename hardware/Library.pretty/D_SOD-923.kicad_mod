@@ -1,0 +1,345 @@
+(footprint "D_SOD-923"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF#page=4")
+	(tags "Diode SOD923")
+	(property "Reference" "REF**"
+		(at 0 -1.2 0)
+		(layer "F.SilkS")
+		(uuid "f0d711b1-5d88-4f4d-a088-61d3e3803b09")
+		(effects
+			(font
+				(size 0.6096 0.6096)
+				(thickness 0.1524)
+			)
+		)
+	)
+	(property "Value" "ESD9B3.3ST5G"
+		(at 0 1.2 0)
+		(layer "F.Fab")
+		(uuid "fecf3b85-4174-447b-97e4-a853af4401b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://www.onsemi.com/pub/Collateral/ESD9B-D.PDF"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a231963f-d2fd-495e-979f-989539e2c599")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "ESD protection diode, 3.3Vrwm, SOD-923"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "118b638f-efe9-4d28-bd6d-5cfe02b134cb")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -0.86 -0.4)
+		(end -0.86 0.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b07389a5-cb98-4e30-89b8-6a18f2d106b7")
+	)
+	(fp_line
+		(start 0.5 -0.4)
+		(end -0.86 -0.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f55508bc-a475-41e9-8f3d-8fd26e1ce178")
+	)
+	(fp_line
+		(start 0.5 0.4)
+		(end -0.86 0.4)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "63df94aa-a7e8-4d88-924c-ff8834f29fab")
+	)
+	(fp_line
+		(start -0.75 -0.28)
+		(end -0.75 0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "506e2e0d-ca3f-41fa-8d91-86aacddb8ead")
+	)
+	(fp_line
+		(start -0.75 0.28)
+		(end -0.55 0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "48728c1e-9860-4283-b5b2-a804d998c32b")
+	)
+	(fp_line
+		(start -0.55 -0.45)
+		(end 0.55 -0.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "bebbbe2c-1371-422d-8557-98a75d370a81")
+	)
+	(fp_line
+		(start -0.55 -0.28)
+		(end -0.75 -0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a6beeb0e-b056-42d4-8fab-fb19ffe04be3")
+	)
+	(fp_line
+		(start -0.55 -0.28)
+		(end -0.55 -0.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1ab2a339-813d-4145-b860-e606e5b32e0e")
+	)
+	(fp_line
+		(start -0.55 0.45)
+		(end -0.55 0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a1770568-6a5e-4741-9d83-05babec4f71f")
+	)
+	(fp_line
+		(start 0.55 -0.45)
+		(end 0.55 -0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "6b230b48-4d5e-49ff-921c-60f00aab52ad")
+	)
+	(fp_line
+		(start 0.55 -0.28)
+		(end 0.75 -0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "e77ccef8-76c8-4618-8550-521d7d1a9cf1")
+	)
+	(fp_line
+		(start 0.55 0.28)
+		(end 0.55 0.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a8436937-efbf-488f-8f5b-49be06868c43")
+	)
+	(fp_line
+		(start 0.55 0.45)
+		(end -0.55 0.45)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "919ad2f5-f1d0-4b9e-a721-30c2c46370dd")
+	)
+	(fp_line
+		(start 0.75 -0.28)
+		(end 0.75 0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "8b2300cc-e72a-4764-a9a0-c4e38509a01b")
+	)
+	(fp_line
+		(start 0.75 0.28)
+		(end 0.55 0.28)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "45c425c7-cfc8-4540-8f82-e26ec49e7ef2")
+	)
+	(fp_line
+		(start -0.4 -0.3)
+		(end 0.4 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "0d24d566-1e4d-4f50-8332-c20010a19d9f")
+	)
+	(fp_line
+		(start -0.4 0.3)
+		(end -0.4 -0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8fc33080-7a4a-4e39-839a-d4985c8399d6")
+	)
+	(fp_line
+		(start -0.15 0)
+		(end -0.25 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8eb5715a-3fef-48aa-a290-ae4f7a3a188d")
+	)
+	(fp_line
+		(start -0.15 0)
+		(end 0.15 0.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8af2f1a4-0a42-4098-8da4-528eadbd4288")
+	)
+	(fp_line
+		(start -0.15 0.2)
+		(end -0.15 -0.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3a45ce86-a0ef-414e-9476-a76123cbbc35")
+	)
+	(fp_line
+		(start 0.15 -0.2)
+		(end -0.15 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7c1c0197-85ee-4d43-ab0d-240a18c27d11")
+	)
+	(fp_line
+		(start 0.15 0)
+		(end 0.25 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "253a33a8-25a2-4d4b-bf64-3a0c3fe677ff")
+	)
+	(fp_line
+		(start 0.15 0.2)
+		(end 0.15 -0.2)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "f4d0f837-5c74-4987-ac2a-18a5c258916d")
+	)
+	(fp_line
+		(start 0.4 -0.3)
+		(end 0.4 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3de598e9-6a32-4d1f-a4c9-ecdef526de85")
+	)
+	(fp_line
+		(start 0.4 0.3)
+		(end -0.4 0.3)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "a9e64dc5-6297-43d5-8177-4e1d2ddf653b")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 -1.2 0)
+		(layer "F.Fab")
+		(uuid "96c664b9-d0ea-4da8-a355-fb9243f43adf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.42 0 180)
+		(size 0.36 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "28317280-ffda-427f-b26a-a98ea35469f4")
+	)
+	(pad "2" smd roundrect
+		(at 0.42 0 180)
+		(size 0.36 0.25)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(zone_connect 2)
+		(uuid "dc7d0fe6-43c1-475e-85c9-64360bac70d3")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Diode_SMD.3dshapes/D_SOD-923.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

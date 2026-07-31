@@ -1,0 +1,12 @@
+Reference	Value	Footprint	Datasheet	Qty	DNP	Exclude from BOM	Exclude from Board
+D1	SS14	Library:D_SMA	https://www.digikey.com/en/products/detail/onsemi/SS14/965474	1			
+D2	ON	Library:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder	~https://www.digikey.com/en/products/detail/liteon/LTST-C190KGKT/386815	1			
+D3	RUN	Library:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder	https://www.digikey.com/en/products/detail/liteon/LTST-C190KSKT/386819	1			
+D4,D5	ESD9R3.3ST5G	Library:D_SOD-923	https://www.digikey.com/en/products/detail/onsemi/ESD9R3-3ST5G/1961067	2			
+H1,H2,H4	MountingHole	Library:MountingHole_3.2mm_M3_DIN965	~	3		Excluded from BOM	
+H3	MountingHole_Pad	Library:MountingHole_3.2mm_M3_Pad_Via	See Note	1		Excluded from BOM	
+J1	FAN	Library:ADAFRUIT_4328	https://www.digikey.com/en/products/detail/jst-sales-america-inc/BM04B-SRSS-TB/926696	1			
+J2	INPUT	Library:TerminalBlock_Phoenix_MPT-0,5-4-2.54_1x04_P2.54mm_Horizontal	https://www.digikey.com/en/products/detail/on-shore-technology-inc/OSTVN04A150/1588864	1			
+J3	PWR	Library:TerminalBlock_Phoenix_MPT-0,5-2-2.54_1x02_P2.54mm_Horizontal	~https://www.digikey.com/en/products/detail/adafruit-industries-llc/2138/6827101	1			
+R1	10k	Library:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder	https://www.digikey.com/en/products/detail/vishay-dale/CRCW080510K0FKEA/1175751	1			
+R2,R3	1K	Library:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder	https://www.digikey.com/en/products/detail/vishay-dale/CRCW08051K00FKEA/1175637	2			
