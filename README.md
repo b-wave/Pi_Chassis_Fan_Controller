@@ -10,7 +10,7 @@ By the way, that connector is reverse voltage protected in case you get the powe
 ### ⚡ CAUTION ⚡
 Be careful if using a 12V fan! *Damage may occur to 3v3 inputs and you may fry your Pi.* 
 
-It may need  a **level shifter** if it does not provide 5V or pin compatible signals (TACH and maybe the PWM) - verify pin voltages before connecting to PI 
+It may need  a **level shifter** if it does not provide 5V or pin compatible signals (TACH and maybe the PWM) - verify pin voltages before connecting to PI.  If they are open collector the 3v3 reference on the 10k pullup should take care of that. 
 
 <p align="center">
   <img src="resources/fan_controller_revc.png" width="350" alt="3D View Generated">
