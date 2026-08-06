@@ -44,6 +44,19 @@ It is a approximately one inch square and is designed to fit on a small DIN rail
             Board Outline: 1.10" x 1.20" (27.6mm x 30.2 mm)
 The LEDs give a visual indication of the fan's operation, since in many cases the fan cannot be heard. 
 
+### Wiring: 
+The fan controller interface board has screw blocks, simply strip your wire tips back 1/8", slide them into the screw terminals, and screw to clamp them down tightly:
+
+ - Fan 5V Power (J3) Pin (1) (Red) ──► Screw into terminal 5V (Pin 2 or 4)
+ - Fan 5V Ground (J3) Pin (2) (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
+   - ***NOTE:**  J3 pins may be to a second 5V supply as well*
+
+ - Fan 3 Volt Reference (RED) ──► Screw into terminal (3V3)
+ - Fan PWM Control Signal (Blue) ──► Screw into terminal GPIO 12 (Pin 32)
+ - Fan System Ground (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
+ - Fan TACH (or FG) Speed Feedback (Yellow) ──► Screw into terminal GPIO 13 (Pin 33)
+   - ***NOTE:**  The colors are failrly standard - but they should match the Pi-Fan connectors*
+
 ### The "ON" LED: 
       
 The "Fan On" or "Drive" Indicator (Green)
