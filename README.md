@@ -45,21 +45,30 @@ It is a approximately one inch square and is designed to fit on a small DIN rail
 The LEDs give a visual indication of the fan's operation, since in many cases the fan cannot be heard. 
 
 ### Wiring: 
-The fan controller interface board has screw blocks, simply strip your wire tips back 1/8", slide them into the screw terminals, and screw to clamp them down tightly:
+The fan controller interface board was designed with screw blocks so you can use wires (stranded 20-22 AWG is recommend) simply strip your wire tips back ~1/8", slide them into the screw terminals, and screw to clamp them down tightly. Alternately, DuPont jumper wires should work, acting like ferrules to keep the wires from pinching. Since these connectors are on 0.1" (2.54mm) centers so you can alternately use regular pin headers and DuPont jumpers.
+
+### Input connector: 
+This connector should be compatible with most 4-wire 5V cooling fans. It helps in two ways. First you just plug in the fan, it provides an interface for the fan's connector. Secondly, since this board is meant for use in an enclosure, the fan wires usually are not long enough, so simply locate this board near the fan and run longer wires back to the Pi.
+
+### Power Connector: 
+J3 pins may be used to input power for the fan. A second external power supply may be used to keep load off of the 5V Raspberry power supply. An external 5V supply should be used but it is possible to use a 12V fan but be mindful of the signals (TACH and PWM) may not have GPIO compatible levels.  But typically the TACH signal is an open collector (or Drain) type so you can use the pull up and the 3v3 reference will generate the proper input signal.  
 
  - Fan 5V Power (J3) Pin (1) (Red) ──► Screw into terminal 5V (Pin 2 or 4)
  - Fan 5V Ground (J3) Pin (2) (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
-   - ***NOTE:**  J3 pins may be to a second 5V supply as well*
+
+### Signal Pins: 
+J2 is the signal interface to the Raspberry PI's GPIOs needed to control and monitor the fan. Two GPIOs are needed, one output for the **PWM** and input for the **TAC (FG)** wires. 
 
  - Fan 3 Volt Reference (RED) ──► Screw into terminal (3V3)
  - Fan PWM Control Signal (Blue) ──► Screw into terminal GPIO 12 (Pin 32)
  - Fan System Ground (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
  - Fan TACH (or FG) Speed Feedback (Yellow) ──► Screw into terminal GPIO 13 (Pin 33)
-   - ***NOTE:**  The colors are failrly standard - but they should match the Pi-Fan connectors*
+  
+    - ***NOTE:**  The colors are failrly standard - but they should match the Pi-Fan connectors*
 
 ### The "ON" LED: 
       
-The "Fan On" or "Drive" Indicator (Green)
+The "Fan On" or "Drive" Indicator (Green or Red)
 
 This LED is wired to the PWM lines powering the fan. When the fan is running at full speed (100% PWM) it is ON full, when it is OFF ( 0% PWM) the fan is OFF. There is a slight dim glow green whenever the fan has power and is being driven by the PWM signal in different speeds it also changes brightness. This LED can also be used to FLASH a code if the fan stalls to aid in servicing since it is strictly an output. 
   
