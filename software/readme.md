@@ -1,10 +1,13 @@
 # Example Scripts
-These were generated scripts and not tested. But you shoud be able to modify for your own use. 
+These were generated scripts and not really tested. But you should be able to modify for your own use. 
 --
 
 **[fan_thermal_test.py]**
 
-This Python script uses the gpiozero library to test the fan and the PCB. It reads ther SoC and the ambient temperature (via the RTC module)  I was seeing a smooth linear climb from 750 RPM at 25% duty cycle up to a whopping 3,900 RPM at 100% means your PCB's hardware pull-up circuit and the software interrupt logic are working flawlessly. 
+This Python script uses the **gpiozero** library to test the fan and the PCB. It reads the Pi SoC and the ambient temperature (via the RTC module). You should see a smooth linear climb for example: 
+  
+*Start at 0% duty cycle climbing to 750 RPM at 25% duty cycle up to a whopping 3,900 RPM at 100% means your PCB's hardware pull-up circuit and the software interrupt logic are working flawlessly.*
+
 
 NOTE: 
 
