@@ -1,48 +1,50 @@
 # A Pi Chassis Fan Controller - Interface Board 
 This describes a small board to interface a 5V, 4-wire fan in a controller cabinet with a Raspberry Pi controller.  The fan I am using is a **GeeekPi** 40x40x10mm 4-wire Fan, **Model F-0028**.  [https://www.amazon.com/GeeekPi-Raspberry-40x40x10mm-Adjustment-Included/dp/B0CL41RG93] 
 
-The JST SH connector on the board should be compatible with the rPi's Fan Connector. You do not need this to control the processor fan, it is intended to actively ventilate an enclosed, wall mounted cabinet. 
+The JST SH connector on the board should be compatible with the Raspberry Pi's Fan Connector. But that connector did not exist on a PI3. You **DO NOT** need this board to control the processor fan, it is intended to actively ventilate an enclosed, wall mounted cabinet. Yes, it is over-designed and has extras such as a static ring ground and ESD diodes - all are probably overkill but it is cheap insurance.  Yes, there are three revisions. I started with a two-wire fan, then three-wire, and finally with this 4-wire version with 100% less transistors.  It mainly just converts the short JST connector into a standard screw terminal. 
 
-Although I provide a separate 2-pin input voltage connector terminal block (J3) it is intended for 5-Volts only. Its purpose is to not stress the **Raspberry Pi4's** Power supply.  Although it should be perfectly fine to run the recommended fan directly off of the Pi +5V, since it was designed to run off of the fan connector on the newer Pi boards. 
+Although I provide a separate 2-pin input voltage connector terminal block (J3) it is intended for 5-Volts only. Its purpose is to not stress the **Raspberry Pi's** Power supply.  Although it should be perfectly fine to run the recommended fan directly off of the +5V, since it was designed to run off of the fan connector on the newer boards. 
 
 By the way, that connector is reverse voltage protected in case you get the power leads reversed - you *should not* damage the Pi.
 
-### ⚡ CAUTION ⚡
-Be careful if using a 12V fan! *Damage may occur to 3v3 inputs and you may fry your Pi.* 
+<h2 align="center">⚡ CAUTION ⚡</h2>
 
-It may need  a **level shifter** if it does not provide 5V or pin compatible signals (TACH and maybe the PWM) - verify pin voltages before connecting to PI.  If they are open collector the 3v3 reference on the 10k pullup should take care of that. 
+Be careful if using a 12V fan! *Damage may occur to 3v3 inputs and you may fry your Pi* 
+
+It may need a **level shifter** if it does not provide 5V or pin compatible signals (TACH and maybe the PWM) - verify pin voltages before connecting to PI.  If they are open collector, the 3v3 reference on the 10k pullup should take care of that. 
 
 <p align="center">
   <img src="resources/fan_controller_revc.png" width="350" alt="3D View Generated">
 </p>
 
 ## Overview
-I am working on a Raspberry Pi 4 controlled LTE gateway using a small DIN rail enclosure.  The planned locations are at fairly remote and the equipment will be enclosed in a small cabinet so active ventilation is required.  This board was needed to simplify installation and to provide some visual and remote feedback.  This is a fairly simple board that is tailored to my specific installations but I may expand it to be more general purpose.  In any case it provides a neat interface to control a cabinet fan
+I am working on a Raspberry Pi 4 controlled LTE gateway using a small DIN rail enclosure.  The planned locations are at fairly remote, and the equipment will be enclosed in a small cabinet so active ventilation is required.  This board was needed to simplify installation and to provide some visual and remote feedback.  This is a fairly simple board that is tailored to my specific installations, but I may expand it to be more general purpose.  In any case, it provides a neat interface to control a cabinet fan I finally settled on this design:
 
 
 
 <p align="center">
-  <img src="resources/fan_controller_revc.svg" width="600" alt="Schematic">
+  <img src="resources/fan_controller_revc.svg" width="800" alt="Schematic">
 </p>
 
-The schematic is pretty straightforward.  It uses a hybrid SMT + Through-hole technologies. 
+The schematic is pretty straightforward.  It uses a hybrid SMT + Through-hole technologies. The ESD diodes wee exceedingly hard to hand solder *so I left them off the prototype,* but the rest of the board should be OK.  
 
 ---
 
 ## Hardware Description
-The hardware combines familiar building blocks with a some added protection from the warm and dry environment.  Extras such as a static ring ground and ESD diodes are probably overkill but it is cheap insurance.  I may put ESD tape and spray in my enclosure as it is intended to run in a dry dusty environment. 
+The hardware combines familiar building blocks with some added protection from the very warm (hot) and dry environment.   I may put ESD tape and spray in my enclosure as it is intended to run in a dry dusty environment. 
 
   *I am not 100% sure if the "Ring Ground" is implemented correctly.  ...But it looks cool?*
 
 <p align="center">
-  <img src="resources/f2cf50859baaec17621ed978b20d583c.png" width="250" alt=" PCB">
+  <img src="resources/0d89453e8df797ddce64d54cdc03f3da.png" width="250" alt=" PCB">
 </p>
 
-It is a approximately one inch square and is designed to fit on a small DIN rail carrier. The board is available on OSHPARK Shared and I will leave a link. [ www.oshpark](https://oshpark.com) The shown image is an early version and some components are moved. I will update and add a link after testing!  
+It is a approximately one inch square and is designed to fit on a small DIN rail carrier. The board is available on OSHPARK Shared and I will leave a link. [ www.oshpark](https://oshpark.com) ~The shown image is an early version and some components are moved. I will update and add a link after testing!~  
 
             Hole Spacing: 0.75" x 0.80" (19.0mm x 20.3mm)
             Board Outline: 1.10" x 1.20" (27.6mm x 30.2 mm)
-The LEDs give a visual indication of the fan's operation, since in many cases the fan cannot be heard. 
+
+  - The LEDs give a visual indication of the fan's operation, since in many cases the fan cannot be seen or heard. 
 
 ### Wiring: 
 The fan controller interface board was designed with screw blocks so you can use wires (stranded 20-22 AWG is recommend) simply strip your wire tips back ~1/8", slide them into the screw terminals, and screw to clamp them down tightly. Alternately, DuPont jumper wires should work, acting like ferrules to keep the wires from pinching. Since these connectors are on 0.1" (2.54mm) centers so you can alternately use regular pin headers and DuPont jumpers.
