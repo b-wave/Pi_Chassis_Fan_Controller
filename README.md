@@ -1,5 +1,5 @@
 # A Pi Chassis Fan Controller - Interface Board 
-This describes a small board to interface a 5V, 4-wire fan in a controller cabinet with a Raspberry Pi controller.  The fan I am using is a **GeekPi** 40x40x10mm 4-wire Fan, **Model F-0028**.  
+This describes a small board to interface a 5V, 4-wire fan in a controller cabinet with a Raspberry Pi controller.  The fan I am using is a **GeeekPi** 40x40x10mm 4-wire Fan, **Model F-0028**.  [https://www.amazon.com/GeeekPi-Raspberry-40x40x10mm-Adjustment-Included/dp/B0CL41RG93] 
 
 The JST SH connector on the board should be compatible with the rPi's Fan Connector. You do not need this to control the processor fan, it is intended to actively ventilate an enclosed, wall mounted cabinet. 
 
@@ -30,15 +30,15 @@ The schematic is pretty straightforward.  It uses a hybrid SMT + Through-hole te
 ---
 
 ## Hardware Description
-The hardware combines familiar building blocks with a some added protection from the warm and dry environment.  Extras such as a static ring ground and ESD diodes are probably overkill but it is cheap insurance.  
+The hardware combines familiar building blocks with a some added protection from the warm and dry environment.  Extras such as a static ring ground and ESD diodes are probably overkill but it is cheap insurance.  I may put ESD tape and spray in my enclosure as it is intended to run in a dry dusty environment. 
 
   *I am not 100% sure if the "Ring Ground" is implemented correctly.  ...But it looks cool?*
 
 <p align="center">
-  <img src="resources/f2cf50859baaec17621ed978b20d583c.png" width="250" alt="CO400 PCB">
+  <img src="resources/f2cf50859baaec17621ed978b20d583c.png" width="250" alt=" PCB">
 </p>
 
-It is a approximately one inch square and is designed to fit on a small DIN rail carrier. The board is available on OSHPARK Shared and I will leave a link. [ www.oshpark](https://oshpark.com)
+It is a approximately one inch square and is designed to fit on a small DIN rail carrier. The board is available on OSHPARK Shared and I will leave a link. [ www.oshpark](https://oshpark.com) The shown image is an early version and some components are moved. I will update and add a link after testing!  
 
             Hole Spacing: 0.75" x 0.80" (19.0mm x 20.3mm)
             Board Outline: 1.10" x 1.20" (27.6mm x 30.2 mm)
@@ -55,6 +55,7 @@ J3 pins may be used to input power for the fan. A second external power supply m
 
  - Fan 5V Power (J3) Pin (1) (Red) ──► Screw into terminal 5V (Pin 2 or 4)
  - Fan 5V Ground (J3) Pin (2) (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
+   *Or use an external 5V supply* 
 
 ### Signal Pins: 
 J2 is the signal interface to the Raspberry PI's GPIOs needed to control and monitor the fan. Two GPIOs are needed, one output for the **PWM** and input for the **TAC (FG)** wires. 
@@ -64,20 +65,24 @@ J2 is the signal interface to the Raspberry PI's GPIOs needed to control and mon
  - Fan System Ground (Black) ──► Screw into terminal GND (Pin 6, 9, or 14)
  - Fan TACH (or FG) Speed Feedback (Yellow) ──► Screw into terminal GPIO 13 (Pin 33)
   
-    - ***NOTE:**  The colors are failrly standard - but they should match the Pi-Fan connectors*
+    - **NOTE:**
+      - The wire colors are fairly standard - but they should match the Pi-Fan connectors
+      - If the PWM wire connection is open the fan will run at full speed. If you don't want that put a large (10k - 100k) resistor to ground 
 
 ### The "ON" LED: 
       
 The "Fan On" or "Drive" Indicator (Green or Red)
 
-This LED is wired to the PWM lines powering the fan. When the fan is running at full speed (100% PWM) it is ON full, when it is OFF ( 0% PWM) the fan is OFF. There is a slight dim glow green whenever the fan has power and is being driven by the PWM signal in different speeds it also changes brightness. This LED can also be used to FLASH a code if the fan stalls to aid in servicing since it is strictly an output. 
+This LED is wired to the PWM lines powering the fan. When the fan is running at full speed (100% PWM) it is ON full, when it is OFF ( 0% PWM) the fan is OFF. There is a slight dim glow green whenever the fan has power and is being driven by the PWM signal in different speeds it also changes brightness. 
+
+  - **NOTE:** This LED can also be used to FLASH a code if the fan stalls to aid in servicing since it is strictly an output. 
   
 ### The "RUN" LED: 
 The "Fan Spinning" Indicator (Yellow or Blue). 
 
 This LED is wired to the TACH  line to monitor it visually. Sometimes this signal is labeled Frequency Generator (FG). 
 
-When the fan is stalled or off, the LED either stays solid or completely dark. When the fan spins at high speed (e.g., 3000 RPM), the TACH pulses occur so quickly (100 times per second) that human eyes perceive the flashing as a continuous, soft glow. If the fan slows down or begins to struggle, you will visually notice the light dimming or starting to flicker.
+When the fan is stalled or off, the LED either stays solid or completely dark. When the fan spins at high speed (e.g., 3000 RPM), the TACH pulses occur so quickly (100 times per second) that human eyes perceive the flashing as a continuous, soft glow. If the fan slows down or begins to struggle, you will visually notice the light dimming or starting to flicker.  If it stops with the LED ON it will turn off after a few seconds. this is normal behavior of these fans to protect against a stall it shuts the control circuits down.  It may even flash occasionally on some fans to test to see if the obstruction is clear. 
 
 ---
 
